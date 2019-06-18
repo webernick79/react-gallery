@@ -15,8 +15,13 @@ class PhotoList extends Component {
   }
 
   // call search on submit
+  // pass a default query parameter
   componentDidMount() {
-    this.flickrSearch(this.props.match.params.query);
+    if (this.props.match.params.query) {
+      this.flickrSearch(this.props.match.params.query);
+    } else {
+      this.flickrSearch("nature");
+    }
   }
 
   // checks for new query parameter
@@ -33,7 +38,10 @@ class PhotoList extends Component {
       .then(response => response.json())
       .then(responseData => {
         console.log(responseData.photos.photo);
-        this.setState({ photos: responseData.photos.photo });
+        this.setState({
+          photos: responseData.photos.photo,
+          loading: false
+        });
       })
       .catch(error => {
         console.log("Error fetching and parsing data", error);
@@ -55,7 +63,7 @@ class PhotoList extends Component {
     return (
       <div className="photo-container">
         <h2>Results</h2>
-        <ul>{photos}</ul>
+        {this.state.loading ? <p>Loading......</p> : <ul>{photos}</ul>}
       </div>
     );
   }

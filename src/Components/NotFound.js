@@ -1,7 +1,12 @@
 import React from "react";
 
 const NotFound = () => {
-  return <h2>Page Not Found</h2>;
+  return (
+    <div>
+      <h2>Page Not Found</h2>
+      <i className="far fa-frown" />
+    </div>
+  );
 };
 
 export default NotFound;

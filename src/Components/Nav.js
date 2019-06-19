@@ -17,13 +17,15 @@ class Nav extends Component {
         <nav className="main-nav">
           <ul>
             <li>
-              <NavLink to="/search/mountains">Mountains</NavLink>
+              <NavLink to="/search/whitewaterkayaking">
+                Whitewater Kayaking
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/search/rivers">Rivers</NavLink>
+              <NavLink to="/search/flyfishing">Fly Fishing</NavLink>
             </li>
             <li>
-              <NavLink to="/search/oceans">Oceans</NavLink>
+              <NavLink to="/search/scubadiving">Scuba Diving</NavLink>
             </li>
           </ul>
         </nav>

@@ -62,8 +62,11 @@ class PhotoList extends Component {
 
     return (
       <div className="photo-container">
-        <h2>Results</h2>
-        {this.state.loading ? <p>Loading......</p> : <ul>{photos}</ul>}
+        {this.state.loading ? (
+          <i className="fas fa-spinner fa-spin" />
+        ) : (
+          <ul>{photos}</ul>
+        )}
       </div>
     );
   }

@@ -5,13 +5,14 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import PhotoList from "./Components/PhotoList";
 import Nav from "./Components/Nav";
 import NotFound from "./Components/NotFound";
+import Header from "./Components/Header";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="container">
-          <h1>Welcome to React Gallery</h1>
+          <Header />
           <Nav />
           <Switch>
             <Route exact path="/" component={PhotoList} />
